@@ -104,7 +104,7 @@ with st.container(border=True):
                  .configure_axis(gridColor=GRID, labelColor=MUTED, titleColor=INK,
                                  labelFontSize=12, titleFontSize=12)
                  .configure_view(stroke=None))
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, width="stretch")
 
 with st.container(border=True):
     st.header("Воронка прохождения")
@@ -135,7 +135,7 @@ with st.container(border=True):
     funnel_chart = ((bars + labels).properties(height=215)
                     .configure_axis(gridColor=GRID, labelColor=MUTED, titleColor=INK)
                     .configure_view(stroke=None))
-    st.altair_chart(funnel_chart, use_container_width=True)
+    st.altair_chart(funnel_chart, width="stretch")
     if start_count:
         st.caption(f"До чекпоинта дошли {checkpoint_count} из {start_count} сессий; "
                    f"после него уровень завершили {finish_count} из {checkpoint_count}.")
@@ -168,13 +168,13 @@ with st.container(border=True):
                    .properties(height=360)
                    .configure_axis(gridColor=GRID, labelColor=MUTED, titleColor=INK)
                    .configure_view(stroke=None))
-        st.altair_chart(heatmap, use_container_width=True)
+        st.altair_chart(heatmap, width="stretch")
         st.caption(f"{level}: число событий смерти — {int(counts.sum())}.")
         with st.expander("Точные значения по участкам"):
             st.dataframe(cells.loc[cells["count"] > 0, ["area", "count"]]
                          .rename(columns={"area": "Участок", "count": "Смертей"})
                          .sort_values("Смертей", ascending=False), hide_index=True,
-                         use_container_width=True)
+                         width="stretch")
 
 st.caption("D1: возврат в следующий календарный день UTC после первого старта игрока. "
            "При выборе уровня все показатели пересчитываются.")
