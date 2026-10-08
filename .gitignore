@@ -16,6 +16,8 @@ data/raw/
 data/processed/
 *.db
 *.sqlite
+!data/telemetry.db
+data/events.jsonl
 runs/
 logs/
 *.mp4
