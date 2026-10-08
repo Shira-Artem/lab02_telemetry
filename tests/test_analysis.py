@@ -129,3 +129,5 @@ def test_streamlit_app_loads():
     app = AppTest.from_file(str(script), default_timeout=30).run()
     assert not app.exception
     assert app.title[0].value == "Игровая телеметрия"
+    app.selectbox[0].set_value("L1").run()
+    assert not app.exception

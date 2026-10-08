@@ -5,7 +5,7 @@ description = "Лабораторная работа № 2: сбор и анал
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "pandas>=2.2,<4",
-    "matplotlib>=3.8,<4", "streamlit>=1.40,<2", "requests>=2.32,<3"
+    "matplotlib>=3.8,<4", "altair>=5,<7", "streamlit>=1.40,<2", "requests>=2.32,<3"
 ]
 
 [project.optional-dependencies]

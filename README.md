@@ -6,7 +6,7 @@
 
 Python 3.11+ · FastAPI · SQLite · pandas · matplotlib · Streamlit · pytest.
 
-`client/python_logger.py` генерирует события, записывает JSONL и при необходимости отправляет пакеты в `POST /events`. FastAPI проверяет схему и сохраняет данные в `data/telemetry.db`. `analysis/analyze.py` читает SQLite, считает четыре метрики и сохраняет графики в `results/`. `dashboard/app.py` читает ту же БД и строит интерактивные графики с фильтром уровня.
+`client/python_logger.py` генерирует события, записывает JSONL и при необходимости отправляет пакеты в `POST /events`. FastAPI проверяет схему и сохраняет данные в `data/telemetry.db`. `analysis/analyze.py` читает SQLite, считает четыре метрики и сохраняет графики в `results/`. `dashboard/app.py` читает ту же БД и строит интерактивные графики с фильтром уровня, подсказками при наведении и кнопкой обновления данных. Тема Streamlit задана в `.streamlit/config.toml`.
 
 | Путь | Назначение |
 |---|---|
